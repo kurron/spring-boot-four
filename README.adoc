@@ -36,11 +36,31 @@ ifdef::env-github[]
 :diagram-type: source,mermaid
 endif::[]
 
-// Your diagram uses the variable attribute
 [{diagram-type}]
 ----
-graph TD
-    Start --> Stop
+ALPHA {
+  int id
+  string name
+}
+
+BRAVO {
+  int id
+  string name
+}
+
+CHARLIE {
+  int id
+  string name
+}
+
+DELTA {
+  int id
+  string name
+}
+
+ALPHA 1 to zero or more BRAVO : contains
+BRAVO 1 to zero or more CHARLIE : contains
+BRAVO 1 to zero or more DELTA : contains
 ----
 
 From IDEA, you can run the HTTP requests in `ContentNegotiationApplication.http` after you have launched the application.
