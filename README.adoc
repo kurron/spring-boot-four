@@ -29,6 +29,20 @@ Being a showcase project, there is nothing to install.
 
 == Tips and Tricks
 
+:diagram-type: mermaid
+
+// If we are on GitHub, treat mermaid as a "source" block to trigger their JS renderer
+ifdef::env-github[]
+:diagram-type: source,mermaid
+endif::[]
+
+// Your diagram uses the variable attribute
+[{diagram-type}]
+----
+graph TD
+    Start --> Stop
+----
+
 From IDEA, you can run the HTTP requests in `ContentNegotiationApplication.http` after you have launched the application.
 
 == Troubleshooting
