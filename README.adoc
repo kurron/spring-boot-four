@@ -67,8 +67,6 @@ erDiagram
   BRAVO 1 to zero or more DELTA : contains
 ----
 
-From IDEA, you can run the HTTP requests in `ContentNegotiationApplication.http` after you have launched the application.
-
 == Troubleshooting
 
 == License and Credits
