@@ -1,0 +1,37 @@
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
+
+== Overview
+This project showcases the new and interesting features in Spring Boot 4, including:
+
+* Spring Data JDBC AOT Repositories
+* Resilience Features
+* Jackson 3
+* Null Safety
+* RestTestClient
+* API Versioning
+
+== Prerequisites
+* JDK 25 or greater
+* Docker installed and running
+
+== Building
+`./mvnw clean install` - to build and run the tests
+`./mvnw spring-boot:run` - to start the application
+
+== Installation
+Being a showcase project, there is nothing to install.
+
+== Tips and Tricks
+
+From IDEA, you can run the HTTP requests in `ContentNegotiationApplication.http` after you have launched the application.
+
+== Troubleshooting
+
+== License and Credits
+* This project is licensed under the http://www.apache.org/licenses/[Apache License Version 2.0, January 2004].
