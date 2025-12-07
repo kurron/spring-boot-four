@@ -43,22 +43,22 @@ endif::[]
 ----
 erDiagram
   ALPHA {
-    int id
+    long id
     string name
   }
 
   BRAVO {
-    int id
+    long id
     string name
   }
 
   CHARLIE {
-    int id
+    long id
     string name
   }
 
   DELTA {
-    int id
+    long id
     string name
   }
 
