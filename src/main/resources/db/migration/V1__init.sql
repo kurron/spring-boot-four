@@ -10,10 +10,10 @@ CREATE TABLE IF NOT EXISTS alpha (
 -- Bravo table (child of Alpha via idColumn = "alphaId")
 CREATE TABLE IF NOT EXISTS bravo (
                                      id      BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-                                     alphaId BIGINT NOT NULL,
+                                     alpha_id BIGINT NOT NULL,
                                      name    VARCHAR(255) NOT NULL,
     CONSTRAINT fk_bravo_alpha
-    FOREIGN KEY (alphaId) REFERENCES alpha(id) ON DELETE CASCADE
+    FOREIGN KEY (alpha_id) REFERENCES alpha(id) ON DELETE CASCADE
     );
 
 -- Charlie table (child of Bravo)

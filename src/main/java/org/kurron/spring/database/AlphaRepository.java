@@ -1,4 +1,4 @@
-package org.kurron.spring;
+package org.kurron.spring.database;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;

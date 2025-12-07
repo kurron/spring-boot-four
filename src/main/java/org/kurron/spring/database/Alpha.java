@@ -1,4 +1,4 @@
-package org.kurron.spring;
+package org.kurron.spring.database;
 
 import lombok.Builder;
 import lombok.With;
@@ -11,7 +11,7 @@ import java.util.Set;
 // the use of Table and Column annotations is optional, as Spring does the correct thing by default
 @Builder
 @With
-record Alpha(@Id Long id, String name, @MappedCollection(idColumn = "alphaId") Set<Bravo> bravos) {
+record Alpha(@Id Long id, String name, @MappedCollection(idColumn = "alpha_id") Set<Bravo> bravos) {
     Alpha {
         bravos = bravos == null ? new HashSet<>(8) : bravos;
     }
