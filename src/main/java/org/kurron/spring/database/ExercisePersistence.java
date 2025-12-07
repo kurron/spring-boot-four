@@ -29,6 +29,10 @@ class ExercisePersistence implements CommandLineRunner {
         log.info("Saved entity: {}", saved);
         var loaded = repository.findByName(saved.name());
         log.info("Loaded entity: {}", loaded);
+        repository.delete(saved);
+        log.info("Entity deleted: {}", loaded);
+        var deleted = repository.findById(saved.id());
+        log.info("Entity {} {}", saved.id(), deleted.isPresent() ? "still there!" : "gone.");
     }
 
     private static String randomName() {
