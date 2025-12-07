@@ -6,7 +6,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.util.Set;
+import java.util.UUID;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 @Component
 @Slf4j
@@ -18,10 +21,10 @@ class ExercisePersistence implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         log.info("Exercise Persistence started");
-        var delta = Delta.builder().name(randomName()).build();
-        var charlie = Charlie.builder().name(randomName()).build();
-        var bravo = Bravo.builder().name(randomName()).charlies(Set.of(charlie)).deltas(Set.of(delta)).build();
-        var alpha = Alpha.builder().name(randomName()).bravos(Set.of(bravo)).build();
+        Set<Delta> deltas = IntStream.range(0, 5).mapToObj(i -> Delta.builder().name(randomName()).build()).collect(Collectors.toSet());
+        Set<Charlie> charlies = IntStream.range(0, 5).mapToObj(i -> Charlie.builder().name(randomName()).build()).collect(Collectors.toSet());
+        Set<Bravo> bravos = IntStream.range(0, 5).mapToObj(i -> Bravo.builder().name(randomName()).charlies(charlies).deltas(deltas).build()).collect(Collectors.toSet());
+        var alpha = Alpha.builder().name(randomName()).bravos(bravos).build();
         var saved = repository.save(alpha);
         log.info("Saved entity: {}", saved);
     }
