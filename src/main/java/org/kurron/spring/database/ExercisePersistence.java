@@ -6,6 +6,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.util.Set;
+import java.util.concurrent.ThreadLocalRandom;
 
 @Component
 @Slf4j
@@ -17,11 +18,15 @@ class ExercisePersistence implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         log.info("Exercise Persistence started");
-        var delta = Delta.builder().name("delta").build();
-        var charlie = Charlie.builder().name("charlie").build();
-        var bravo = Bravo.builder().name("bravo").charlies(Set.of(charlie)).deltas(Set.of(delta)).build();
-        var alpha = Alpha.builder().name("alpha").bravos(Set.of(bravo)).build();
+        var delta = Delta.builder().name(randomName()).build();
+        var charlie = Charlie.builder().name(randomName()).build();
+        var bravo = Bravo.builder().name(randomName()).charlies(Set.of(charlie)).deltas(Set.of(delta)).build();
+        var alpha = Alpha.builder().name(randomName()).bravos(Set.of(bravo)).build();
         var saved = repository.save(alpha);
         log.info("Saved entity: {}", saved);
+    }
+
+    private static String randomName() {
+        return Long.toHexString(ThreadLocalRandom.current().nextLong(0, Long.MAX_VALUE)).toUpperCase();
     }
 }
