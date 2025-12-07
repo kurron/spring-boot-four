@@ -74,3 +74,4 @@ Run `./mvnw clean install` to generate the AOT classes for Spring Data JDBC Repo
 
 == License and Credits
 * This project is licensed under the http://www.apache.org/licenses/[Apache License Version 2.0, January 2004].
+* See https://github.com/danvega/spring-data-aot/tree/master[Spring Data AOT Coffee Shop Demo] for more examples of Spring Data AOT usage.
