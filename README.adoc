@@ -67,6 +67,9 @@ erDiagram
   BRAVO 1 to zero or more DELTA : contains
 ----
 
+=== Spring Data AOT
+Run `./mvnw clean install` to generate the AOT classes for Spring Data JDBC Repositories. Look at `target/classes/org/kurron/spring/database/AlphaRepository.json` to see what classes implement the various repository methods. Also, see `target/classes/org/kurron/spring/database/AlphaRepositoryImpl__AotRepository.class` for the generated implementation.
+
 == Troubleshooting
 
 == License and Credits

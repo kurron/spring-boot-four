@@ -27,6 +27,8 @@ class ExercisePersistence implements CommandLineRunner {
         var alpha = Alpha.builder().name(randomName()).bravos(bravos).build();
         var saved = repository.save(alpha);
         log.info("Saved entity: {}", saved);
+        var loaded = repository.findByName(saved.name());
+        log.info("Loaded entity: {}", loaded);
     }
 
     private static String randomName() {
