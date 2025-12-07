@@ -19,10 +19,8 @@ class ExercisePersistence implements CommandLineRunner {
         log.info("Exercise Persistence started");
         var delta = Delta.builder().name("Delta").build();
         var charlie = Charlie.builder().name("Charlie").build();
-        //var bravo = Bravo.builder().name("Bravo").charlies(Set.of(charlie)).deltas(Set.of(delta)).build();
-        var alpha = Alpha.builder().name("alpha").build();
-        var bravo = Bravo.builder().name("Bravo").build();
-        alpha.bravos().add(bravo);
+        var bravo = Bravo.builder().name("Bravo").charlies(Set.of(charlie)).build();
+        var alpha = Alpha.builder().name("alpha").bravos(Set.of(bravo)).build();
         var saved = repository.save(alpha);
         log.info("Saved entity: {}", saved);
     }

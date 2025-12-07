@@ -11,13 +11,11 @@ import java.util.Set;
 // the use of Table and Column annotations is optional, as Spring does the correct thing by default
 @Builder
 @With
-record Bravo(@Id Long id, String name
-             //@MappedCollection(idColumn = "bravoId") Set<Charlie> charlies, @MappedCollection(idColumn = "bravoId") Set<Delta> deltas
+record Bravo(@Id Long id, String name, @MappedCollection(idColumn = "bravo_id") Set<Charlie> charlies
+             //@MappedCollection(idColumn = "bravoId") Set<Delta> deltas
 ) {
-/*
     Bravo {
         charlies = charlies == null ? new HashSet<>(8) : charlies;
-        deltas = deltas == null ? new HashSet<>(8) : deltas;
+//        deltas = deltas == null ? new HashSet<>(8) : deltas;
     }
-*/
 }

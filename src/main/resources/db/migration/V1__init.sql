@@ -19,10 +19,10 @@ CREATE TABLE IF NOT EXISTS bravo (
 -- Charlie table (child of Bravo)
 CREATE TABLE IF NOT EXISTS charlie (
                                        id      BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-                                       bravoId BIGINT NOT NULL,
+                                       bravo_id BIGINT NOT NULL,
                                        name    VARCHAR(255) NOT NULL,
     CONSTRAINT fk_charlie_bravo
-    FOREIGN KEY (bravoId) REFERENCES bravo(id) ON DELETE CASCADE
+    FOREIGN KEY (bravo_id) REFERENCES bravo(id) ON DELETE CASCADE
     );
 
 -- Delta table (child of Bravo)
