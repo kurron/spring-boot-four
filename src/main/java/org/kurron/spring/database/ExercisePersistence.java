@@ -17,9 +17,9 @@ class ExercisePersistence implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         log.info("Exercise Persistence started");
-        var delta = Delta.builder().name("Delta").build();
-        var charlie = Charlie.builder().name("Charlie").build();
-        var bravo = Bravo.builder().name("Bravo").charlies(Set.of(charlie)).build();
+        var delta = Delta.builder().name("delta").build();
+        var charlie = Charlie.builder().name("charlie").build();
+        var bravo = Bravo.builder().name("bravo").charlies(Set.of(charlie)).deltas(Set.of(delta)).build();
         var alpha = Alpha.builder().name("alpha").bravos(Set.of(bravo)).build();
         var saved = repository.save(alpha);
         log.info("Saved entity: {}", saved);
