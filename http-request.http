@@ -1,0 +1,2 @@
+### declarative resiliency
+GET localhost:8080//api/resilient/declarative
