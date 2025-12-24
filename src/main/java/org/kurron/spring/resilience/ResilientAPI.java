@@ -1,6 +1,7 @@
 package org.kurron.spring.resilience;
 
 import lombok.AllArgsConstructor;
+import org.springframework.core.retry.RetryException;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,5 +14,10 @@ public class ResilientAPI {
     @RequestMapping("/declarative")
     String doSomethingResilient() {
         return flakyService.retryDeclaratively();
+    }
+
+    @RequestMapping("/imperative")
+    String doSomethingImperative() throws RetryException {
+        return flakyService.retryImperatively();
     }
 }
