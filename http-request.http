@@ -3,3 +3,39 @@ GET localhost:8080//api/resilient/declarative
 
 ### imperative resiliency
 GET localhost:8080//api/resilient/imperative
+
+### full data object
+GET localhost:8080//api/jackson/full
+
+### just text
+GET localhost:8080//api/jackson/just-text
+
+### just numbers
+GET localhost:8080//api/jackson/just-numbers
+
+### just booleans
+GET localhost:8080//api/jackson/just-booleans
+
+### just time
+GET localhost:8080//api/jackson/just-time
+
+### just enumerations
+GET localhost:8080//api/jackson/just-enumerations
+
+### send full payload
+GET localhost:8080//api/jackson/send-full
+
+### send just text
+GET localhost:8080//api/jackson/send-text
+
+### send just numbers
+GET localhost:8080//api/jackson/send-numbers
+
+### send just booleans
+GET localhost:8080//api/jackson/send-booleans
+
+### send just time
+GET localhost:8080//api/jackson/send-time
+
+### send just enumerations
+GET localhost:8080//api/jackson/send-enumerations
